@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Practice Examples</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        p[class] {
+            font-size: 200%;
+        }
+        p[class="a"] {
+            background-color: yellow;
+        }
+        p[class~="a"] {
+            color: red;
+        }
+        table,  td {
+            border: 1px solid purple;
+        }
+        h1 {
+            width: 50%;
+            margin: auto;
+            font-size: 350%;
+            color: red;
+        }
+        h2 {
+            font-size: 200%;
+            color: purple;
+        }
+        p[class ^="aDash"] {
+            font-size: 400%;
+        }
+        p[class $= "aDash"] {
+            background-color: yellow;
+        }
+        p[class *= "aDash"] {
+            color: red;
+        }
+        p[class ^="bOnly"] {
+            background-color: yellow;
+        }
+        p[class ^= "bOnly" i] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attribute Selectors</h1>
+    <table>
+        <tr>
+            <td>Presence</td>
+            <td>Value</td>
+        </tr>
+        <tr>
+            <td>A[attr] = Mathes Presence of Attribute</td>
+            <td>1. A[attr = val] = <span>Matches Exact value of String</span></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>2. A[attr ^= val] = Matches Starting Value of Sub-String.</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>3. A[attr $= val] = Matches Ending Value of Sub-String</td>
+        </tr> <tr>
+            <td>&nbsp;</td>
+            <td>4. A[attr *= val] = <span>Matches any where in the Sub-String</span></td>
+        </tr>
+
+    </table>
+    <!-- Example demonstrations -->
+    <section>
+        <h2>Attribute Presence & Attribute value selectors.</h2>
+        <p>I have no class. So I am not affected.</p>
+        <p class="a">I have Class = "a"</p>
+        <p class="a b">I have class = "a b". <strong>I have space between a & b</strong></p>
+        <p class="ab">I have class = "ab".<strong> I have No SPACE BETWEEN a & b.</strong> So, I am not red & no yellow Background. but font-size = 200%.</p>
+    </section>
+    <!-- Example of substring matching attributes -->
+    <section>
+        <h2>Attribute Substring Matching Selectors.</h2>
+        <p class="aDash">I have class="adash". ^= used</p>
+        <p class="aDashb">I have class="aDashb"</p>
+        <p class="bcaDash">I have class="bcaDash". $= used.</p>
+        <p class="bcaDashbc">I have class="bcaDashbc"</p>
+    </section>
+    <!-- Example of case-insensitivity A[attr = "a" i] -->
+    <section>
+        <h2>Case-insensitivity</h2>
+        <p class="bOnly">I have class = "bOnly". font color affected by p[class ^= "bOnly" i]. case-insensitivity.</p>
+        <p class="BONLY">I have class = "AONLY".font color affected by p[class ^= "bOnly" i]. case-insensitivity.</p>
+        <p class="BONLYCONLY">I have class = "AONLYBONLY".font color affected by p[class ^= "bOnly" i]. case-insensitivity.</p>
+    </section>
+</body>
+</html>
