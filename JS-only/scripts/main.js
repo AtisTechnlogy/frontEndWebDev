@@ -1,33 +1,18 @@
-let myImage = document.querySelector("img");
-myImage.onclick = () => {
-    const imgSrc = myImage.getAttribute("src");
-    // if loop started 
-    if (imgSrc === "images/image1.jpg") {
-        myImage.setAttribute("src", "images/image2.jpg");
-    }else {
-        myImage.setAttribute("src", "images/image1.jpg");
-    }
+function textChange () {
+   const myElement = document.getElementById("p1");
+   myElement.innerHTML = "getElementById used here."
+   myElement.style.fontSize = "40px";
 }
-
-let myButton = document.querySelector("button");
-let myHeading = document.querySelector("h4")
-function setUserName() {
-   const myName = prompt("What's your name?");
-   if(!myName) {
-    setUserName();
-   }else {
-    localStorage.setItem("name", myName);
-    myHeading.textContent = `hi Browser, ${myName}`;
-   }
-   localStorage.setItem("name", myName);
-   myHeading.textContent = `hi, ${myName}`;
+function textChange2() {
+    const myElement = document.getElementById("p2");
+    myElement.innerHTML = "AWww!!! You Change my Text !!!"
 }
-if(!localStorage.getItem("name")) {
-   setUserName();
-   }else {
-    const storedName = localStorage.getItem("name");
-    myHeading.textContent = `Mozilla is Cool,` + storedName;
-   }
-myButton.onclick = ()=> {
-   setUserName();
+function vammo() {
+    alert ("Vammo !!!")
+}
+function seeConsole() {
+    console.log("Hello Buddy !!!!");
+}
+function eraseText () {
+   document.write("Erased");
 }
