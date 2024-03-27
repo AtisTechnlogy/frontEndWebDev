@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS test</title>
+    <style>
+        .big {
+            font-size: 10vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="output"></div>
+
+    <script>
+        const myArr = [];
+        const output = document.querySelector(".output");
+        const myInput = document.createElement("input");
+        output.prepend(myInput);
+
+        const btn = document.createElement("button");
+        btn.textContent = "Add Person";
+        output.append(btn);
+
+        const list = document.createElement('ul');
+        output.append(list);
+        build();
+        btn.addEventListener("click",addPerson);
+
+        //addPerson
+        function addPerson() {
+            const newPerson = myInput.value;
+            myArr.push(newPerson);
+            console.log(myArr);
+            adder(newPerson);
+        }
+        //adder 
+        function adder(person) {
+            const listItem = document.createElement('li');
+            listItem.textContent = person;
+            list.append(listItem);
+        }
+        //build()
+        function build() {
+            myArr.forEach(ele => {
+                adder(ele);
+            })
+        }
+        
+       
+    </script>
+</body>
+</html>
